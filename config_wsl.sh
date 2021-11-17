@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Step1 ==============
 # package update
 sudo apt update
 
@@ -7,6 +10,7 @@ sudo apt install zsh curl nano
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Step2 ==============
 # add shortcuts
 echo 'alias zrc="nano ~/.zshrc"' >>~/.zshrc
 echo 'alias src="source ~/.zshrc"' >>~/.zshrc
