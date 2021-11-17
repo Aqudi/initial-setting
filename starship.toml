@@ -1,0 +1,98 @@
+add_newline = true
+
+prompt_order = [
+  "username",
+  "memory_usage",
+  "hostname",
+  "kubernetes",
+  "directory",
+  "git_branch",
+  "git_commit",
+  "git_state",
+  "git_status",
+  "hg_branch",
+  "package",
+  "dotnet",
+  "elixir",
+  "elm",
+  "golang",
+  "haskell",
+  "java",
+  "nodejs",
+  "php",
+  "python",
+  "ruby",
+  "rust",
+  "terraform",
+  "nix_shell",
+  "conda",
+  "aws",
+  "env_var",
+  "crystal",
+  "line_break",
+  "battery",
+  "cmd_duration",
+  "jobs",
+  "time",
+  "character",
+]
+
+[battery]
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+full_symbol = "🔋"
+
+[[battery.display]]
+style = "bold red"
+threshold = 10
+
+[[battery.display]]
+style = "bold yellow"
+threshold = 60
+
+[[battery.display]]
+style = "bold green"
+threshold = 100
+
+[character]
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[cmd_duration]
+min_time = 500
+prefix = "tooks "
+
+[directory]
+disabled = false
+prefix = "in "
+style = "bold cyan"
+truncate_to_repo = true
+truncation_length = 6
+
+[hostname]
+prefix = "🤖"
+ssh_only = false
+# suffix = "⟫"
+disabled = false
+trim_at = "."
+
+[line_break]
+disabled = false
+
+[nodejs]
+disabled = false
+style = "bold green"
+symbol = "⬢ "
+
+[python]
+disabled = false
+pyenv_prefix = "pyenv"
+pyenv_version_name = false
+style = "bold yellow"
+symbol = "🐍 "
+
+[username]
+disabled = false
+show_always = false
+style_root = "bold red"
+style_user = "bold yellow"
