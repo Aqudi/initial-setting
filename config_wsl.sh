@@ -1,32 +1,33 @@
 #!/bin/bash
 
 # Step1 ==============
-# package update
 sudo apt update
 
-# install required programs
+# Install required programs
 sudo apt install zsh curl nano
 
-# install oh my zsh
+# Install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Step2 ==============
-# add shortcuts
+# Reopen your terminal
+
+# Add shortcuts
 echo 'alias zrc="nano ~/.zshrc"' >>~/.zshrc
 echo 'alias src="source ~/.zshrc"' >>~/.zshrc
 
-# disable color highlighting
+# Disable color highlighting
 echo 'LS_COLORS=$LS_COLORS:"ow=1;34:" ; export LS_COLORS' >>~/.zshrc
 
-# disable zsh theme to use startship
+# Disable zsh theme to use startship
 sed -i 's/ZSH_THEME/#\ ZSH_THEME/' ~/.zshrc
 
-# install starship prompt
+# Install starship prompt
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 echo 'eval "$(starship init zsh)"' >>~/.zshrc
 
-# apply startship configuration
+# Apply startship configuration
 cp starship.toml ~/.config/starship.toml
 
-# apply all changes
+# Apply all changes
 source ~/.zshrc
