@@ -1,24 +1,10 @@
 add_newline = true
 
-[battery]
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
-full_symbol = "🔋"
-
-[[battery.display]]
-style = "bold red"
-threshold = 10
-
-[[battery.display]]
-style = "bold yellow"
-threshold = 60
-
-[[battery.display]]
-style = "bold green"
-threshold = 100
-
+# Basic start
 [character]
-error_symbol = "✗"
+error_symbol = "[❯](red)"
+success_symbol = "[❯](purple)"
+vicmd_symbol = "[❮](green)"
 
 [cmd_duration]
 min_time = 500
@@ -37,6 +23,59 @@ trim_at = "."
 [line_break]
 disabled = false
 
+[username]
+disabled = false
+show_always = false
+style_root = "bold red"
+style_user = "bold yellow"
+
+[package]
+disabled = true
+# Basic end
+
+# System info start 
+[battery]
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+full_symbol = "🔋"
+
+[[battery.display]]
+style = "bold red"
+threshold = 10
+
+[[battery.display]]
+style = "bold yellow"
+threshold = 60
+
+[[battery.display]]
+style = "bold green"
+threshold = 100
+
+[memory_usage]
+disabled = false
+format = "$symbol[${ram}( | ${swap})]($style) "
+style = "bold dimmed white"
+threshold = 70
+# System info end
+
+# Git start
+[git_status]
+conflicted = "​"
+deleted = "​"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+modified = "​"
+renamed = "​"
+staged = "​"
+stashed = "≡"
+style = "cyan"
+untracked = "​"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+# Git end
+
+# Langauge start
 [nodejs]
 disabled = false
 style = "bold green"
@@ -44,22 +83,9 @@ symbol = "⬢ "
 
 [python]
 disabled = false
+format = "[$virtualenv]($style) "
 pyenv_prefix = "pyenv"
 pyenv_version_name = false
-style = "bold yellow"
+style = "bright-black"
 symbol = "🐍 "
-
-[username]
-disabled = false
-show_always = false
-style_root = "bold red"
-style_user = "bold yellow"
-
-[memory_usage]
-disabled = false
-format = "$symbol[${ram}( | ${swap})]($style) "
-style = "bold dimmed white"
-threshold = 70
-
-[package]
-disabled = true
+# Language end
