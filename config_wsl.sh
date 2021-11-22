@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Step1 ==============
+sudo sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 sudo apt update
 
 # Install required programs
