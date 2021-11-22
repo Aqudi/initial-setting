@@ -28,6 +28,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 echo 'eval "$(starship init zsh)"' >>~/.zshrc
 
 # Apply startship configuration
+mkdir ~/.config
 cp starship.toml ~/.config/starship.toml
 
 # Apply all changes
