@@ -27,5 +27,5 @@ Invoke-Expression (&starship init powershell)' >> $PROFILE
 
 # Apply startship configuration
 mkdir -p ~/.starship
-cp starship.toml ~/.startship/config.toml
+cp starship.toml ~/.starship/config.toml
 echo '$ENV:STARSHIP_CONFIG = "$HOME\.starship\config.toml"' >> $PROFILE
